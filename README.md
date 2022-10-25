@@ -64,7 +64,7 @@
 
 * In a normal game of Mastermind, there are 8 colors to choose from to make a combination. These colors are represented by the numbers 1-8.
 * The guesser can receive 2 different kinds of feedback: A black peg, which refers to a correct color in a correct position, and a white peg, which refers to a correct color in an incorrect position. Feedback is represented in the form of a tuple, where the first value is the black peg and the second value is the white peg.
-* The scoring system for the minimax algorithm is based on the best worst-case in terms of how many future combinations can be eliminated. In other words, the algorithm picks the highest minimum amount of future combinations that can be removed to determine the overall next best guess.
+* The scoring system for the [minimax algorithm](https://www.youtube.com/watch?v=KU9Ch59-4vw&ab_channel=GauravSen) is based on the best worst-case in terms of how many future combinations can be eliminated. In other words, the algorithm picks the highest minimum amount of future combinations that can be removed to determine the overall next best guess.
 * A more in-depth explanation can be found [here](https://math.stackexchange.com/questions/2014141/knuths-mastermind-algoritm-the-last-step)
 
 ## Contact
