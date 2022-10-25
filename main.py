@@ -108,28 +108,35 @@ def mastermind(colors, spots):
   havent_guessed = total_codes
 
   secret_int = int(input("Enter a combination of four numbers from 1-8 (ie: 1548): \n"))
-  secret = list(map(int, str(secret_int)))
-  
-  guesses = 0
-  feedback = None
-  
-  while feedback != (4,0):
-    if guesses == 0:
-      guess = [1,1,2,2]
-      feedback = calculate_score(secret, [1,1,2,2])
-    else:
-      guess = get_code(knuth_codes, havent_guessed)
-      feedback = calculate_score(secret, guess)
-      
-    guesses += 1
 
-    print(f"Guess {guesses}: {guess} --> {feedback}")
+  if len(str(secret_int)) == 4:
 
-    if feedback == (4,0):
-      break
-    else:
-      prune_list(guess, feedback, knuth_codes)
+    secret = list(map(int, str(secret_int)))
+    
+    guesses = 0
+    feedback = None
+    
+    while feedback != (4,0):
+      if guesses == 0:
+        guess = [1,1,2,2]
+        feedback = calculate_score(secret, [1,1,2,2])
+      else:
+        guess = get_code(knuth_codes, havent_guessed)
+        feedback = calculate_score(secret, guess)
+        
+      guesses += 1
 
-  return f"Guesses Made: {guesses}"
+      print(f"Guess {guesses}: {guess} --> {feedback}")
+
+      if feedback == (4,0):
+        break
+      else:
+        prune_list(guess, feedback, knuth_codes)
+
+    return f"Guesses Made: {guesses}"
+
+  else:
+    return "Please enter 4 numbers"
 
 print(mastermind(8, 4))
+input("Press enter to close")
